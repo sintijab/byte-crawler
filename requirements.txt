@@ -1,0 +1,6 @@
+flask
+flask-cors
+playwright
+asyncio
+Gunicorn
+bs4
