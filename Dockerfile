@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 80
 
-CMD ["gunicorn", "-w", "2", "--timeout", "600", "--graceful-timeout", "120", "-b", "0.0.0.0:80", "app:app"]
+CMD ["python", "app.py"]

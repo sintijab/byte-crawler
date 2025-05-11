@@ -9,11 +9,17 @@
 ```
 
 ## Run the application
-```python
+```sh
     python app.py --date=YYYY-MM-DD
 ```
 
+## Run with docker
+```sh
+    docker build -t sound-archive .
+    docker run sound-archive --date 2025-05-11
+```
+
 ## Troubleshooting
-```python
+```sh
  python test.py
 ```
