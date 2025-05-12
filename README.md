@@ -26,7 +26,11 @@
 ## Clear duplicates by title from JSON
 ```sh
     python dedup_json_by_title.py FILE_1.json
+```
 
+## Clear errors from logs
+```sh
+    python clear_errors.py error_log.txt
 ```
 
 ## Run with docker
@@ -34,8 +38,6 @@
     docker build -t sound-archive .
     docker run sound-archive --date 2025-05-11
 ```
-
-
 
 ## Troubleshooting
 ```sh
