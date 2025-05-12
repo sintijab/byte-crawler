@@ -97,12 +97,10 @@ async def crawl_all_week_cells(date_str):
     output_file = f"{date_str}.txt"
 
     with open(output_file, "w", encoding="utf-8") as f:
-        for song in songs:
+        for song in all_songs:
             line = f"{song['author']} – {song['title']}"
             print(line)
             f.write(line + "\n")
-
-    print(f"\nSaved to {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
