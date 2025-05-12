@@ -43,7 +43,7 @@ async def crawl_all_week_cells(date_str):
     all_songs = []
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False, args=["--no-sandbox"])
+        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
 
         start_url = f"{BASE_URL}/programm/woche/{date_str}/"
         print(f"Opening: {start_url}")
@@ -93,8 +93,16 @@ async def crawl_all_week_cells(date_str):
         await browser.close()
 
     print(f"\nTotal songs collected: {len(all_songs)}")
-    for song in all_songs:
-        print(f"{song['author']} – {song['title']}")
+    
+    output_file = f"{date_str}.txt"
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        for song in songs:
+            line = f"{song['author']} – {song['title']}"
+            print(line)
+            f.write(line + "\n")
+
+    print(f"\nSaved to {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
