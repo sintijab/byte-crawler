@@ -23,6 +23,12 @@
     python clear_duplicates.py dedup FILE_1.txt
 ```
 
+## Clear duplicates by title from JSON
+```sh
+    python dedup_json_by_title.py FILE_1.json
+
+```
+
 ## Run with docker
 ```sh
     docker build -t sound-archive .
