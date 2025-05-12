@@ -10,7 +10,12 @@
 
 ## Run the application
 ```sh
-    python app.py --date=YYYY-MM-DD
+    python app.py --dates YYYY-MM-DD YYYY-MM-DD
+```
+
+## Clear duplicates
+```sh
+    python clear_duplicates.py FILE_1.txt FILE_2.txt
 ```
 
 ## Run with docker
@@ -18,6 +23,8 @@
     docker build -t sound-archive .
     docker run sound-archive --date 2025-05-11
 ```
+
+
 
 ## Troubleshooting
 ```sh

@@ -104,7 +104,15 @@ async def crawl_all_week_cells(date_str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date", type=str, required=True, help="Date in YYYY-MM-DD format")
+    parser.add_argument("--dates", nargs="+", type=str, required=True, help="List of dates in YYYY-MM-DD format")
     args = parser.parse_args()
 
-    asyncio.run(crawl_all_week_cells(args.date))
+    async def run_all_dates(dates):
+        for date_str in dates:
+            print(f"\n=== Processing {date_str} ===")
+            try:
+                await crawl_all_week_cells(date_str)
+            except Exception as e:
+                print(f"Failed to process {date_str}: {e}")
+
+    asyncio.run(run_all_dates(args.dates))
