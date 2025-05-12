@@ -13,9 +13,14 @@
     python app.py --dates YYYY-MM-DD YYYY-MM-DD
 ```
 
-## Clear duplicates
+## Clear duplicates from two files
 ```sh
-    python clear_duplicates.py FILE_1.txt FILE_2.txt
+    python clear_duplicates.py compare FILE_1.txt FILE_2.txt
+```
+
+## Clear duplicates from a single file
+```sh
+    python clear_duplicates.py dedup FILE_1.txt
 ```
 
 ## Run with docker
