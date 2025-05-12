@@ -16,12 +16,9 @@ def deduplicate_by_title(input_file, output_file=None):
 
     output_path = output_file or input_file
     with open(output_path, 'w', encoding='utf-8') as f:
-        f.write('[\n')
-        for i, item in enumerate(deduplicated):
+        for item in deduplicated:
             json_line = json.dumps(item, separators=(',', ':'), ensure_ascii=False)
-            comma = ',' if i < len(deduplicated) - 1 else ''
-            f.write(json_line + comma + '\n')
-        f.write(']')
+            f.write(json_line + '\n')
 
     print(f"Deduplicated and saved to: {output_path}")
 
