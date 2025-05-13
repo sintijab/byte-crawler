@@ -15,7 +15,7 @@
 
 ## Clear duplicates from two files
 ```sh
-    python3 clear_duplicates.py compare 2025-05-11.txt 2025-05-05.txt
+    python3 clear_duplicates.py compare FILE_1.txt FILE_2.txt
 ```
 
 ## Clear duplicates from a single file
